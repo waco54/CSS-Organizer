@@ -17,3 +17,30 @@ const cssOrder = [
     'word-spacing', 'letter-spacing', 'white-space', 'color', 'font', 'font-family', 'font-size', 'font-weight',
     'content', 'quotes', 'transition'
 ];
+
+function organize() {
+    let inputCss = document.querySelector("#cssInput").value;
+
+    // Parse CSS properties from the input
+    const cssRules = inputCss.split(';').filter(rule => rule.trim() !== '');
+    
+    // Convert CSS rules into a map for easier sorting
+    let cssMap = new Map();
+    cssRules.forEach(rule => {
+        let [property, value] = rule.split(':').map(str => str.trim());
+        if (property && value) {
+            cssMap.set(property, value);
+        }
+    });
+
+    // Sort properties based on the defined order
+    let sortedProperties = [];
+    cssOrder.forEach(property => {
+        if (cssMap.has(property)) {
+            sortedProperties.push(`${property}: ${cssMap.get(property)}`);
+        }
+    });
+
+    // Output sorted CSS to the console
+    console.log(sortedProperties.join('; '));
+}
