@@ -14,6 +14,10 @@ pre {
     margin: 10px auto;
 }
 
+.note {
+    color: #ff9898;
+}
+
 textarea {
     height: 200px;
     padding: 10px;
