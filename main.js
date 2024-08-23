@@ -55,4 +55,5 @@ function organize() {
     // Output sorted CSS
     console.log(organizedCss.trim());
     outputBox.value = organizedCss.trim();
+    outputBox.style.display = "block";
 }
