@@ -1,1 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
+textarea,
+button,
+pre {
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    margin: 10px auto;
+}
+
+textarea {
+    height: 200px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+pre {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
