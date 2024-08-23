@@ -19,6 +19,9 @@ textarea {
     padding: 10px;
     box-sizing: border-box;
     resize: none;
+    background-color: #f3f8ff;
+    color: #000;
+    outline: none;
 }
 
 button {
