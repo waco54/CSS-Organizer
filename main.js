@@ -21,26 +21,37 @@ const cssOrder = [
 function organize() {
     let inputCss = document.querySelector("#cssInput").value;
 
-    // Parse CSS properties from the input
-    const cssRules = inputCss.split(';').filter(rule => rule.trim() !== '');
+    // Split CSS by selector block
+    const blocks = inputCss.split('}').filter(block => block.trim() !== '');
     
-    // Convert CSS rules into a map for easier sorting
-    let cssMap = new Map();
-    cssRules.forEach(rule => {
-        let [property, value] = rule.split(':').map(str => str.trim());
-        if (property && value) {
-            cssMap.set(property, value);
-        }
-    });
+    let organizedCss = '';
 
-    // Sort properties based on the defined order
-    let sortedProperties = [];
-    cssOrder.forEach(property => {
-        if (cssMap.has(property)) {
-            sortedProperties.push(`${property}: ${cssMap.get(property)}`);
-        }
+    blocks.forEach(block => {
+        // Split into selector and properties
+        const [selectors, properties] = block.split('{').map(part => part.trim());
+
+        // Parse CSS properties
+        const cssRules = properties.split(';').filter(rule => rule.trim() !== '');
+        let cssMap = new Map();
+        cssRules.forEach(rule => {
+            let [property, value] = rule.split(':').map(str => str.trim());
+            if (property && value) {
+                cssMap.set(property, value);
+            }
+        });
+
+        // Sort properties
+        let sortedProperties = [];
+        cssOrder.forEach(property => {
+            if (cssMap.has(property)) {
+                sortedProperties.push(`${property}: ${cssMap.get(property)}`);
+            }
+        });
+
+        // Append to organized CSS
+        organizedCss += `${selectors} { ${sortedProperties.join('; ')}; }\n`;
     });
 
     // Output sorted CSS to the console
-    console.log(sortedProperties.join('; '));
+    console.log(organizedCss.trim());
 }
