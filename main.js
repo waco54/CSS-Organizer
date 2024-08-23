@@ -44,12 +44,12 @@ function organize() {
         let sortedProperties = [];
         cssOrder.forEach(property => {
             if (cssMap.has(property)) {
-                sortedProperties.push(`${property}: ${cssMap.get(property)}`);
+                sortedProperties.push(`    ${property}: ${cssMap.get(property)}`);
             }
         });
 
-        // Append to organized CSS
-        organizedCss += `${selectors} { ${sortedProperties.join('; ')}; }\n`;
+        // Append to organized CSS with proper formatting
+        organizedCss += `${selectors} {\n${sortedProperties.join(';\n')};\n}\n\n`;
     });
 
     // Output sorted CSS
