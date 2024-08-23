@@ -52,6 +52,7 @@ function organize() {
         organizedCss += `${selectors} { ${sortedProperties.join('; ')}; }\n`;
     });
 
-    // Output sorted CSS to the console
+    // Output sorted CSS
     console.log(organizedCss.trim());
+    outputBox.value = organizedCss.trim();
 }
