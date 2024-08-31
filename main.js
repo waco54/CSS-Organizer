@@ -12,7 +12,7 @@ const cssOrder = [
     'max-width', 'height', 'min-height', 'max-height', 'cursor', 'overflow', 'list-style', 'caption-side', 'table-layout', 
     'border-collapse', 'border-spacing', 'empty-cells', 'vertical-align', 'text-align', 'text-indent', 'text-transform', 
     'text-decoration', 'line-height', 'word-spacing', 'letter-spacing', 'white-space', 'color', 'font', 'font-family', 
-    'font-size', 'font-weight', 'user-select', 'content', 'quotes', 'transition'
+    'font-size', 'font-weight', 'text-shadow', 'user-select', 'content', 'quotes', 'transition'
 ];
 
 function organize() {
