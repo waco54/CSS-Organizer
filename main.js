@@ -9,10 +9,10 @@ const cssOrder = [
     'border-right-style', 'border-bottom-style', 'border-left-style', 'border-color', 'border-top-color', 'border-right-color', 
     'border-bottom-color', 'border-left-color', 'background', 'background-color', 'background-image', 'background-repeat', 
     'background-position', 'padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left', 'width', 'min-width', 
-    'max-width', 'height', 'min-height', 'max-height', 'cursor', 'overflow', 'list-style', 'caption-side', 'table-layout', 
+    'max-width', 'height', 'min-height', 'max-height', 'box-sizing', 'resize', 'cursor', 'overflow', 'list-style', 'caption-side', 'table-layout', 
     'border-collapse', 'border-spacing', 'empty-cells', 'vertical-align', 'text-align', 'text-indent', 'text-transform', 
     'text-decoration', 'line-height', 'word-spacing', 'letter-spacing', 'white-space', 'color', 'font', 'font-family', 
-    'font-size', 'font-weight', 'text-shadow', 'user-select', 'content', 'quotes', 'transition'
+    'font-size', 'font-weight', 'text-shadow', 'user-select', 'content', 'word-wrap', 'quotes', 'transition'
 ];
 
 function organize() {
